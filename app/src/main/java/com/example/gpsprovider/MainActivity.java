@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView lblLat, lblLong;
     Button btnOkey;
-    // define the location variables
     LocationManager locationManager;
     Location location;
     String provider;
@@ -46,9 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lblLat = findViewById(R.id.lblLatitude);
         lblLong = findViewById(R.id.lblLongitude);
         btnOkey = findViewById(R.id.button);
-        //
         btnOkey.setOnClickListener(this);
-        // set up the location service
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             provider = LocationManager.GPS_PROVIDER;
@@ -60,18 +57,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             return;
         }
         locationManager.requestLocationUpdates(provider, 0, 0, this);
         location = locationManager.getLastKnownLocation(provider);
-        // add validation
+
         if (location != null) {
             lat = location.getLatitude();
             lng = location.getLongitude();
