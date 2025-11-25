@@ -27,16 +27,20 @@
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
+                android:textSize="18sp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="LATITUDE"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblLatitude"
+                android:fontFamily="sans-serif-condensed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="18sp"
                 android:text="0.0" />
 
             <TextView
@@ -45,22 +49,27 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="LONGITUDE"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/lblLongitude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:textSize="18sp"
                 android:text="0.0" />
 
             <Button
                 android:id="@+id/button"
+                android:backgroundTint="@android:color/holo_blue_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
                 android:text="OKEY" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
